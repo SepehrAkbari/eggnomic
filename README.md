@@ -22,11 +22,9 @@ $$
 y = \pm \frac{b}{2} \cdot \sqrt{\frac{L^2 + 4x^2}{{L}^2 + 8wx + 4w^2}}
 $$
 
-Finally, I tried a tried a more complex approach to raise the accuracy of my model, by using polynomials, specifically a Lagrange interpolation. I used three polynomials as a proof of concept, which of course can be extended to more polynomials for higher accuracy:
+Finally, I tried a more complex approach to raise the accuracy of my model by using polynomials, specifically a Lagrange interpolation. I used three polynomials as a proof of concept, which can, of course, be extended to more polynomials for higher accuracy:
 
-$$
-P(x) = \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}y_0 + \dots + \frac{(x-x_a)(x-x_b)(x-x_c)}{(x_m-x_a)(x_m-x_b)(x_m-x_c)}y_n
-$$
+$$P(x) = y_0 \frac{(x-x_1)(x-x_2)\dots(x-x_n)}{(x_0-x_1)(x_0-x_2)\dots(x_0-x_n)} + \dots + y_n \frac{(x-x_0)(x-x_1)\dots(x-x_{n-1})}{(x_n-x_0)(x_n-x_1)\dots(x_n-x_{n-1})}$$
 
 ## Contributing
 
