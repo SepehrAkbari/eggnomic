@@ -13,7 +13,7 @@ The egg used in this project is a standard chicken egg, from my fridge... The go
 I started by uploading a picture of my egg to desmos, to get a sense of its curvature and to be able to visualize my models and get a sense of their accuracy. I started by my simplest idea, which was using the standard ellipse equation, and adding a parameter, `c`, to adjust the curvature:
 
 $$
-\frac{x^2}{r_x^2} + \frac{y^2}{r_y^2 + cy} = 1, \quad c > 0
+\frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + cy} = 1, \quad c > 0
 $$
 
 
