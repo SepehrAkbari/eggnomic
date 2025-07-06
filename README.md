@@ -42,7 +42,7 @@ And the surface area ($A$) was determined by revolving the curve around the axis
 
 $$A=2\pi\int_{a}^{b}f(y)\sqrt{1+[f^{\prime}(y)]^{2}}dy$$
 
-This rigorous mathematical approach allowed us to move beyond visual approximations, providing precise numerical insights into the fascinating geometry of a chicken egg.
+And thus, we calculated the amount of egg shell (surface area) and the amount of egg white and yolk (volume) of the egg. If you are interested in the detailed calculations and explanations, please refer to the [paper](/paper/IB-MATH-IA-2022.pdf).
 
 
 ## Contributing
