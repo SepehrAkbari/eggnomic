@@ -10,21 +10,34 @@ The egg used in this project is a standard chicken egg, from my fridge... The go
 
 ## Methodology
 
-I started by uploading a picture of my egg to desmos, to get a sense of its curvature and to be able to visualize my models and get a sense of their accuracy. I also automated the process of finding the axis of symmetry and the center with [this script](/scripts/axis.py). I then started with my simplest idea, which was using the standard ellipse equation, and adding a parameter, `c`, to adjust the curvature:
+Our journey began with uploading an egg image to Desmos to intuitively grasp its curvature and validate our model's accuracy. To ensure precision, we automated the crucial step of finding the egg's axis of symmetry and center using [a dedicated script](/scripts/axis.py).
 
-$$
-\frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + cy} = 1, \quad c > 0
-$$
+We then embarked on a comparative study of three distinct mathematical models to represent the egg's unique profile:
 
-Next, I tried using a more general approach, to try to fit the egg's curvature by just looking at the length of the egg. I used oviform curve, which is a generalization of the ellipse, and has a parameter `w` that adjusts the curvature:
+1.  **The Modified Ellipse Equation:** Our simplest initial concept involved the standard ellipse, augmented with a curvature parameter, $c$, to fine-tune its shape:
+    $$\frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + cy} = 1, \quad c > 0$$
+    This method offered a foundational, precise fit to specific egg contours.
 
-$$
-y = \pm \frac{b}{2} \cdot \sqrt{\frac{L^2 + 4x^2}{{L}^2 + 8wx + 4w^2}}
-$$
+2.  **The Oviform Curve:** Seeking a more generalized representation, we adopted the oviform curve, a sophisticated generalization of the ellipse. This model incorporates a parameter, $w$, that directly adjusts the curvature based primarily on the egg's overall length:
+    $$y = \pm \frac{b}{2} \cdot \sqrt{\frac{L^2 + 4x^2}{{L}^2 + 8wx + 4w^2}}$$
+    To visualize this, we wrote [this script](/scripts/oviform.py) to generate the oviform curve based on given parameters. This approach demonstrated remarkable robustness to minor measurement uncertainties, prioritizing broad applicability.
 
-Finally, I tried a more complex approach to raise the accuracy of my model by using polynomials, specifically a Lagrange interpolation. I used three polynomials as a proof of concept, which can, of course, be extended to more polynomials for higher accuracy:
+3.  **Lagrange Interpolation:** For the highest fidelity to specific data points, we explored Lagrange interpolation, a polynomial-based method. As a proof of concept, we utilized three polynomials, a framework easily extensible for even greater accuracy:
+    $$P(x) = y_0 \frac{(x-x_1)(x-x_2)\dots(x-x_n)}{(x_0-x_1)(x_0-x_2)\dots(x_0-x_n)} + \dots + y_n \frac{(x-x_0)(x-x_1)\dots(x-x_{n-1})}{(x_n-x_0)(x_n-x_1)\dots(x_n-x_{n-1})}$$
+    While offering unparalleled precision in fitting exact coordinates, this method inherently sacrificed generality.
 
-$$P(x) = y_0 \frac{(x-x_1)(x-x_2)\dots(x-x_n)}{(x_0-x_1)(x_0-x_2)\dots(x_0-x_n)} + \dots + y_n \frac{(x-x_0)(x-x_1)\dots(x-x_{n-1})}{(x_n-x_0)(x_n-x_1)\dots(x_n-x_{n-1})}$$
+Each of these modeling techniques presented a unique balance of precision and generality. The modified ellipse equation provided a precise fit for specific contours. The oviform curve offered broader applicability based on egg length, robust to measurement uncertainties. Conversely, Lagrange interpolation yielded the highest precision for exact coordinates but lacked generality. For subsequent calculations, the ellipse equation was selected for its optimal balance of simplicity, smoothness, and generality, proving more suitable than the oviform curve's broader fit or Lagrange interpolation's high specificity. Ultimately, each method's utility is application-dependent.
+
+With the egg's profile accurately modeled using the chosen ellipse equation, the final, crucial step was to quantify its three-dimensional properties. We leveraged the power of integral calculus to derive both the volume and surface area of the egg. By revolving the 2D mathematical representation of the egg's curvature around its axis of symmetry, we transformed a geometric shape into tangible, quantifiable metrics. The volume ($V$) was calculated using the disk method (or method of washers) for solids of revolution:
+
+$$V=\pi\int_{a}^{b}[f(y)]^{2}dy$$
+
+And the surface area ($A$) was determined by revolving the curve around the axis, using the formula:
+
+$$A=2\pi\int_{a}^{b}f(y)\sqrt{1+[f^{\prime}(y)]^{2}}dy$$
+
+This rigorous mathematical approach allowed us to move beyond visual approximations, providing precise numerical insights into the fascinating geometry of a chicken egg.
+
 
 ## Contributing
 
