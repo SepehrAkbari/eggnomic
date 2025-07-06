@@ -10,13 +10,17 @@ The egg used in this project is a standard chicken egg, from my fridge... The go
 
 ## Methodology
 
-I started by uploading a picture of my egg to desmos, to get a sense of its curvature and to be able to visualize my models and get a sense of their accuracy. I started by my simplest idea, which was using the standard ellipse equation, and adding a parameter, `c`, to adjust the curvature:
+I started by uploading a picture of my egg to desmos, to get a sense of its curvature and to be able to visualize my models and get a sense of their accuracy. I also automated the process of finding the axis of symmetry and the center with [this script](/scripts/axis.py). I then started with my simplest idea, which was using the standard ellipse equation, and adding a parameter, `c`, to adjust the curvature:
 
 $$
 \frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + cy} = 1, \quad c > 0
 $$
 
+Next, I tried using a more general approach, to try to fit the egg's curvature by just looking at the length of the egg. I used oviform curve, which is a generalization of the ellipse, and has a parameter `w` that adjusts the curvature:
 
+$$
+\frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + w y} = 1, \quad w \ge 0
+$$
 
 ## Contributing
 
