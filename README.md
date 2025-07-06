@@ -19,7 +19,7 @@ $$
 Next, I tried using a more general approach, to try to fit the egg's curvature by just looking at the length of the egg. I used oviform curve, which is a generalization of the ellipse, and has a parameter `w` that adjusts the curvature:
 
 $$
-y = \plusminus \frac{b}{2} \cdot \frac{L^2 + 8wx + 4w^2}{{L}^2 + 8wx + 4w^2}
+y = \pm \frac{b}{2} \cdot \sqrt{\frac{L^2 + 4x^2}{{L}^2 + 8wx + 4w^2}}
 $$
 
 ## Contributing
