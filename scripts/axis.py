@@ -1,4 +1,4 @@
-image = import["sepehrakbari/documents/IB/MathIA/egg_bg.png"]
+image = import["egg.png"]
 image = FillingTransform[Closing[image, 2]]
 
 comp = componentMeasurement[
