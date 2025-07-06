@@ -25,7 +25,7 @@ $$
 Finally, I tried a tried a more complex approach to raise the accuracy of my model, by using polynomials, specifically a Lagrange interpolation. I used three polynomials as a proof of concept, which of course can be extended to more polynomials for higher accuracy:
 
 $$
-P(x) = \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}y_0 + \frac{(x-x_0)(x-x_2)(x-x_3)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)}y_1 + \frac{(x-x_0)(x-x_1)(x-x_3)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)}y_2 + \dots + \frac{(x-x_a)(x-x_b)(x-x_c)}{(x_m-x_a)(x_m-x_b)(x_m-x_c)}y_n
+P(x) = \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}y_0 + \dots + \frac{(x-x_a)(x-x_b)(x-x_c)}{(x_m-x_a)(x_m-x_b)(x_m-x_c)}y_n
 $$
 
 ## Contributing
