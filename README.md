@@ -18,19 +18,19 @@ We then embarked on a comparative study of three distinct mathematical models to
 
 $$\frac{x^2}{{r_x}^2} + \frac{y^2}{{r_y}^2 + cy} = 1, \quad c > 0$$
 
-This method offered a foundational, precise fit to specific egg contours.
+    This method offered a foundational, precise fit to specific egg contours.
 
 2.  **The Oviform Curve:** Seeking a more generalized representation, we adopted the oviform curve, a sophisticated generalization of the ellipse. This model incorporates a parameter, $w$, that directly adjusts the curvature based primarily on the egg's overall length:
 
 $$y = \pm \frac{b}{2} \cdot \sqrt{\frac{L^2 + 4x^2}{{L}^2 + 8wx + 4w^2}}$$
 
-To visualize this, we wrote [this script](/scripts/oviform.py) to generate the oviform curve based on given parameters. This approach demonstrated remarkable robustness to minor measurement uncertainties, prioritizing broad applicability.
+    To visualize this, we wrote [this script](/scripts/oviform.py) to generate the oviform curve based on given parameters. This approach demonstrated remarkable robustness to minor measurement uncertainties, prioritizing broad applicability.
 
 3.  **Lagrange Interpolation:** For the highest fidelity to specific data points, we explored Lagrange interpolation, a polynomial-based method. As a proof of concept, we utilized three polynomials, a framework easily extensible for even greater accuracy:
 
 $$P(x) = y_0 \frac{(x-x_1)(x-x_2)\dots(x-x_n)}{(x_0-x_1)(x_0-x_2)\dots(x_0-x_n)} + \dots + y_n \frac{(x-x_0)(x-x_1)\dots(x-x_{n-1})}{(x_n-x_0)(x_n-x_1)\dots(x_n-x_{n-1})}$$
 
-While offering unparalleled precision in fitting exact coordinates, this method inherently sacrificed generality.
+    While offering unparalleled precision in fitting exact coordinates, this method inherently sacrificed generality.
 
 Each of these modeling techniques presented a unique balance of precision and generality. The modified ellipse equation provided a precise fit for specific contours. The oviform curve offered broader applicability based on egg length, robust to measurement uncertainties. Conversely, Lagrange interpolation yielded the highest precision for exact coordinates but lacked generality. For subsequent calculations, the ellipse equation was selected for its optimal balance of simplicity, smoothness, and generality, proving more suitable than the oviform curve's broader fit or Lagrange interpolation's high specificity. Ultimately, each method's utility is application-dependent.
 
